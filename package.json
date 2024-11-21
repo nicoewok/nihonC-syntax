@@ -1,14 +1,14 @@
 {
     "name": "nihonc-syntax-highlighting",
     "publisher": "NicoLang1604",
-    "homepage": "https://github.com/nicoewok/maxima-syntax-highlighting",
-    "displayName": "Maxima Syntax Highlighting",
-    "description": "A syntax highlighter for Maxima, the Common Lisp maths language. More about Maxima here: https://maxima.sourceforge.io/",
+    "homepage": "https://github.com/nicoewok/nihonC-syntax",
+    "displayName": "NihonC Syntax Highlighting",
+    "description": "A syntax highlighter for NihonC, a Japanese alternative to C. More about NihonC here: https://github.com/nicoewok/nihonC",
     "version": "1.0.2",
     "icon": "images/icon_market.png",
     "repository": {
       "type": "git",
-      "url": "https://github.com/nicoewok/maxima-syntax-highlighting.git"
+      "url": "https://github.com/nicoewok/nihonC-syntax.git"
     },
     "engines": {
       "vscode": "^1.78.0"
@@ -18,9 +18,9 @@
     ],
     "contributes": {
       "languages": [{
-        "id": "mac",
-        "aliases": ["Maxima", "mac"],
-        "extensions": [".mac"],
+        "id": "nihonC",
+        "aliases": ["NihonC", "nihonC"],
+        "extensions": [".nihonC"],
         "configuration": "./language-configuration.json",
         "icon": {
           "light": "./images/icon.png",
