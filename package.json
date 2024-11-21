@@ -1,0 +1,36 @@
+{
+    "name": "nihonc-syntax-highlighting",
+    "publisher": "NicoLang1604",
+    "homepage": "https://github.com/nicoewok/maxima-syntax-highlighting",
+    "displayName": "Maxima Syntax Highlighting",
+    "description": "A syntax highlighter for Maxima, the Common Lisp maths language. More about Maxima here: https://maxima.sourceforge.io/",
+    "version": "1.0.2",
+    "icon": "images/icon_market.png",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/nicoewok/maxima-syntax-highlighting.git"
+    },
+    "engines": {
+      "vscode": "^1.78.0"
+    },
+    "categories": [
+      "Programming Languages"
+    ],
+    "contributes": {
+      "languages": [{
+        "id": "mac",
+        "aliases": ["Maxima", "mac"],
+        "extensions": [".mac"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/icon.png",
+          "dark": "./images/icon.png"
+        }
+      }],
+      "grammars": [{
+        "language": "mac",
+        "scopeName": "source.mac",
+        "path": "./syntaxes/mac.tmLanguage.json"
+      }]
+    }
+  }
