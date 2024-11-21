@@ -23,6 +23,12 @@
 		},
 		{
 			"include": "#variables"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#numbers"
 		}
 	],
 	"repository": {
@@ -56,6 +62,42 @@
 				{
 					"name": "storage.modifier.nihonc",
 					"match": "\\b(const|static|extern|register|auto|volatile|inline|restrict)\\b"
+				},
+				{
+					"name": "entity.name.function.pointer.nihonc",
+					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\(\\s*\\*?\\s*\\)"
+				},
+				{
+					"name": "storage.type.typedef.nihonc",
+					"match": "\\btypedef\\b"
+				},
+				{
+					"name": "keyword.control.union.nihonc",
+					"match": "\\b(union)\\b"
+				},
+				{
+					"name": "entity.name.union.nihonc",
+					"match": "\\b(union\\s+[A-Za-z_][A-Za-z0-9_]*\\s*\\{[^\\}]*\\})\\b"
+				},
+				{
+					"name": "keyword.control.struct.nihonc",
+					"match": "\\b(struct)\\b"
+				},
+				{
+					"name": "entity.name.struct.nihonc",
+					"match": "\\b(struct\\s+[A-Za-z_][A-Za-z0-9_]*\\s*\\{[^\\}]*\\})\\b"
+				},
+				{
+					"name": "keyword.control.enum.nihonc",
+					"match": "\\b(enum)\\b"
+				},
+				{
+					"name": "variable.other.enum-value.nihonc",
+					"match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\b"
+				},
+				{
+					"name": "storage.type.pointer.nihonc",
+					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*\\*)\\b"
 				}
 			]
 		},
@@ -123,6 +165,66 @@
 				{
 					"name": "meta.preprocessor.directive.nihonc",
 					"match": "#\\s*(define|pragma|undef|ifdef|ifndef|endif|if|else|elif|error|warning)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.arithmetic.nihonc",
+					"match": "\\+|\\-|\\*|\\/|%"
+				},
+				{
+					"name": "keyword.operator.assignment.nihonc",
+					"match": "=|\\+=|\\-=|\\*=|\\/=|%="
+				},
+				{
+					"name": "keyword.operator.comparison.nihonc",
+					"match": "==|!=|<|>|<=|>="
+				},
+				{
+					"name": "keyword.operator.logical.nihonc",
+					"match": "&&|\\|\\||!"
+				},
+				{
+					"name": "keyword.operator.bitwise.nihonc",
+					"match": "\\&|\\||\\^|~|<<|>>"
+				},
+				{
+					"name": "keyword.operator.increment-decrement.nihonc",
+					"match": "\\+\\+|--"
+				},
+				{
+					"name": "keyword.operator.ternary.nihonc",
+					"match": "\\?|:"
+				},
+				{
+					"name": "keyword.operator.pointer.nihonc",
+					"match": "\\*|&"
+				},
+				{
+					"name": "keyword.operator.member-access.nihonc",
+					"match": "\\.|->"
+				},
+				{
+					"name": "keyword.operator.sizeof.nihonc",
+					"match": "sizeof"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.integer.nihonc",
+					"match": "\\b([+-]?\\d+)\\b"
+				},
+				{
+					"name": "constant.numeric.hex.nihonc",
+					"match": "\\b0x[0-9A-Fa-f]+\\b"
+				},
+				{
+					"name": "constant.numeric.float.nihonc",
+					"match": "\\b([+-]?\\d*\\.\\d+([eE][+-]?\\d+)?)\\b"
 				}
 			]
 		}
