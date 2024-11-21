@@ -1,80 +1,32 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Maxima",
+	"name": "NihonC",
 	"patterns": [
-		{
-			"include": "#comments"
-		},
 		{
 			"include": "#keywords"
 		},
 		{
-			"include": "#operators"
-		},
-		{
-			"include": "#functions"
-		},
-		{
-			"include": "#double-quoted-strings"
-		},
-		{
-			"include": "#numbers"
-		},
-		{
-			"include": "#variables"
-		},
-		{
-			"include": "#constants"
+			"include": "#strings"
 		}
 	],
 	"repository": {
-		"comments": {
-			"name": "comment.block.mac",
-			"begin": "/\\*",
-			"end": "\\*/"
-		},
 		"keywords": {
 			"patterns": [{
-				"name": "keyword.control.mac",
-				"match": "\\b(if|then|else|while|do|for|to|return|lambda|block|quote|load)\\b"
+				"name": "keyword.control.nihonc",
+				"match": "\\b(if|while|for|return)\\b"
 			}]
 		},
-		"operators": {
-			"name": "keyword.operator.mac",
-			"match": "\\b\\s*(\\+|-|\\*|/|\\^|%|:|:=|=|#|<|>|<=|>=|/=|and|or|not)\\s*\\b"
-		},
-		"functions": {
-			"name": "entity.name.function.mac",
-			"match": "\\b[a-zA-Z_][a-zA-Z0-9_']*\\b(?=\\s*\\()",
-			"captures": {
-				"0": {
-					"name": "entity.name.function.mac"
-				}
-			}
-		},
-		"double-quoted-strings": {
-			"name": "string.quoted.double.mac",
+		"strings": {
+			"name": "string.quoted.double.nihonc",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.mac",
+					"name": "constant.character.escape.nihonc",
 					"match": "\\\\."
 				}
 			]
-		},
-		"numbers": {
-			"name": "constant.numeric.mac",
-			"match": "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b"
-	   },
-	   "variables": {
-		   "name": "variable.mac",
-		   "match": "\\b[a-zA-Z_][a-zA-Z0-9_']*\\b"
-	   },
-	   "constants": {
-		"name": "constant.language.mac",
-		"match": "\\b(%pi|%e|%inf|%i|%phi)\\b"
 		}
 	},
-	"scopeName": "source.mac"
+	"scopeName": ""
 }
