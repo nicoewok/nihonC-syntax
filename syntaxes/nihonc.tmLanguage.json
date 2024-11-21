@@ -8,12 +8,28 @@
 		{
 			"include": "#strings"
 		}
+		,
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#preprocessor"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
+		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.nihonc",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(if|while|for|return|から|まで)\\b"
 			}]
 		},
 		"strings": {
@@ -26,7 +42,90 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "storage.type.nihonc",
+					"match": "\\b(int|float|char|double|void|long|short|unsigned|signed|bool)\\b"
+				},
+				{
+					"name": "storage.type.nihonc",
+					"match": "\\b(イント|フロート|チャル|ダブル|void|ロング)\\b"
+				},
+				{
+					"name": "storage.modifier.nihonc",
+					"match": "\\b(const|static|extern|register|auto|volatile|inline|restrict)\\b"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.nihonc",
+					"begin": "//",
+					"beginCaptures": {
+						"0": { "name": "punctuation.definition.comment.nihonc" }
+					},
+					"end": "$",
+					"patterns": []
+				},
+				{
+					"name": "comment.block.nihonc",
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": { "name": "punctuation.definition.comment.nihonc" }
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": { "name": "punctuation.definition.comment.nihonc" }
+					},
+					"patterns": []
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.nihonc",
+					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\()"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.other.nihonc",
+					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b"
+				}
+			]
+		},
+		"preprocessor": {
+			"patterns": [
+				{
+					"name": "meta.preprocessor.include.nihonc",
+					"begin": "#\\s*include\\s*",
+					"beginCaptures": {
+						"0": { "name": "keyword.control.include.nihonc" }
+					},
+					"end": "(?=$|\\n)",
+					"patterns": [
+						{
+							"name": "string.quoted.double.include.nihonc",
+							"match": "\"[^\"]+\""
+						},
+						{
+							"name": "string.quoted.angle.include.nihonc",
+							"match": "<[^>]+>"
+						}
+					]
+				},
+				{
+					"name": "meta.preprocessor.directive.nihonc",
+					"match": "#\\s*(define|pragma|undef|ifdef|ifndef|endif|if|else|elif|error|warning)\\b"
+				}
+			]
 		}
 	},
-	"scopeName": ""
+	"scopeName": "source.nihonc"
 }
