@@ -35,7 +35,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.nihonc",
-				"match": "\\b(if|while|for|return|から|まで)\\b"
+				"match": "\\b(if|while|for|return|から|まで|は|です)\\b"
 			}]
 		},
 		"strings": {

@@ -1,9 +1,14 @@
 {
   "name": "nihonc-syntax-highlight",
+  "publisher": "LangNico",
   "displayName": "NihonC Syntax Highlight",
   "description": "A syntax highlighter for NihonC, a Japanese alternative to C. More about NihonC here: https://github.com/nicoewok/nihonC",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "icon": "images/icon_market.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicoewok/nihonC-syntax.git"
+  },
   "engines": {
     "vscode": "^1.95.0"
   },
