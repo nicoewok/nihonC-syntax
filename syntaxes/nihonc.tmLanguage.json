@@ -57,11 +57,15 @@
 				},
 				{
 					"name": "storage.type.nihonc",
-					"match": "\\b(イント|フロート|チャル|ダブル|void|ロング)\\b"
+					"match": "\\b(整数|浮動小数点|文字|倍精度浮動小数点|void|ロング)\\b"
 				},
 				{
 					"name": "storage.modifier.nihonc",
 					"match": "\\b(const|static|extern|register|auto|volatile|inline|restrict)\\b"
+				},
+				{
+					"name": "storage.modifier.nihonc",
+					"match": "\\b(定数|static|extern|register|auto|volatile|inline|restrict)\\b"
 				},
 				{
 					"name": "entity.name.function.pointer.nihonc",
