@@ -35,7 +35,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.nihonc",
-				"match": "\\b(if|else|while|for|return|もし|それ以外|から|まで|は|です)\\b"
+				"match": "\\b(if|else|while|for|return|もし|それ以外|から|まで)\\b"
 			}]
 		},
 		"strings": {
@@ -180,11 +180,15 @@
 				},
 				{
 					"name": "keyword.operator.assignment.nihonc",
-					"match": "=|\\+=|\\-=|\\*=|\\/=|%="
+					"match": "=|は|です|\\+=|\\-=|\\*=|\\/=|%="
 				},
 				{
 					"name": "keyword.operator.comparison.nihonc",
 					"match": "==|!=|<|>|<=|>="
+				},
+				{
+					"name": "keyword.operator.comparison.nihonc",
+					"match": "と|が等しい|異なる|より小さい|より大きい|等しいか"
 				},
 				{
 					"name": "keyword.operator.logical.nihonc",
