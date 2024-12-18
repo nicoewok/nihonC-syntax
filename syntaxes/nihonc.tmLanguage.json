@@ -35,8 +35,13 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.nihonc",
-				"match": "\\b(if|else|while|for|return|もし|それ以外|から|まで)\\b"
-			}]
+				"match": "\\b(if|else|while|for|return)\\b"
+			},
+			{
+				"name": "keyword.control.nihonc",
+				"match": "\\b(もし|それ以外|間|から|まで)\\b"
+			}
+		]
 		},
 		"strings": {
 			"name": "string.quoted.double.nihonc",
@@ -150,7 +155,7 @@
 			"patterns": [
 				{
 					"name": "meta.preprocessor.include.nihonc",
-					"begin": "#\\s*include\\s*",
+					"begin": "#\\s*(include|組込)\\s*",
 					"beginCaptures": {
 						"0": { "name": "keyword.control.include.nihonc" }
 					},
@@ -167,8 +172,37 @@
 					]
 				},
 				{
-					"name": "meta.preprocessor.directive.nihonc",
-					"match": "#\\s*(define|pragma|undef|ifdef|ifndef|endif|if|else|elif|error|warning)\\b"
+					"name": "meta.preprocessor.define.nihonc",
+					"begin": "#\\s*(定義|define)\\s+",
+					"beginCaptures": {
+						"0": { "name": "keyword.control.define.nihonc" }
+					},
+					"end": "(?=$|\\n)",
+					"patterns": [
+						{
+							"name": "entity.name.function.define.nihonc",
+							"match": "\\b[\\w\\d_]+\\b",
+							"captures": {
+								"0": { "name": "entity.name.function.define.nihonc" }
+							}
+						},
+						{
+							"name": "string.quoted.double.define.nihonc",
+							"match": "\"[^\"]+\""
+						},
+						{
+							"name": "string.quoted.angle.define.nihonc",
+							"match": "<[^>]+>"
+						},
+						{
+							"name": "constant.numeric.define.nihonc",
+							"match": "\\b\\d+\\b"
+						},
+						{
+							"name": "variable.parameter.define.nihonc",
+							"match": "\\b[\\w\\d_]+(?=\\s*\\()"
+						}
+					]
 				}
 			]
 		},
